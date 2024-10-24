@@ -1,0 +1,144 @@
+body {
+	background-color: #185c37;
+	color: #fff;
+	user-select: none;
+}
+
+.wrapper {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 22px;
+	padding: 0 15px;
+	padding-top: 30px;
+	padding-bottom: 50px;
+
+	@media (max-width: 500px) {
+		font-size: 18px;
+	}
+}
+
+.todo {
+
+	&__title {
+		font-size: 36px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
+	&__form {
+		height: 50px;
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: center;
+
+		@media (max-width: 500px) {
+			height: 40px;
+			margin-bottom: 30px;
+		}
+
+		input,
+		button {
+			height: 100%;
+		}
+	}
+
+	&__input {
+		padding: 15px;
+		border-radius: 5px 0 0 5px;
+		color: #185c37;
+		flex: 1 1 auto;
+		min-width: 150px;
+
+		&:focus {
+			outline: 1px solid #0f3c23;
+		}
+	}
+
+	&__button-send {
+		background-color: #e43c30;
+		padding: 0 15px;
+		border-radius: 0 5px 5px 0;
+		transition: all 0.2s ease 0s;
+
+		&:hover {
+			background-color: #bc2518;
+		}
+	}
+
+	&__list {
+		li {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__item {
+		line-height: 150%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+		border-radius: 5px;
+		gap: 15px;
+		color: #185c37;
+		background-color: #fff;
+
+		@media (max-width: 500px) {
+			font-size: 16px;
+			padding: 5px 10px;
+			gap: 5px;
+		}
+
+		span {
+			flex: 1 1 auto;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 400px;
+			cursor: pointer;
+		}
+	}
+
+}
+
+.icon {
+	&__task {
+		flex: 0 0 22px;
+	}
+
+	&__check {
+		flex: 0 0 22px;
+		cursor: pointer;
+		color: #b2b2b2;
+		transition: all 0.2s ease 0s;
+
+		&.active {}
+
+		&:hover {
+			color: #6cd9a8;
+			transform: scale(1.1);
+		}
+	}
+
+	&__delete {
+		flex: 0 0 22px;
+		cursor: pointer;
+		color: #b2b2b2;
+		transition: all 0.2s ease 0s;
+
+		&:hover {
+			color: #e43d30;
+			transform: scale(1.1);
+		}
+	}
+}
+
+.todo__item.active .icon__check {
+	color: green;
+}
+
+.todo__item.active span {
+	color: #185c37;
+	opacity: .5;
+	text-decoration: line-through;
+}
